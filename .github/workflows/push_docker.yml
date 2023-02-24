@@ -1,6 +1,21 @@
-uses: ricado-group/docker-base-image-build-action@v1
-with:
-  github-token: ${{ secrets.GITHUB_TOKEN }}
-  docker-image-name: nutek-fedsec
-  docker-hub-username: ${{ secrets.DOCKER_USERNAME }}
-  docker-hub-password: ${{ secrets.DOCKER_PASSWORD }}
+# Action Name
+name: Push to Hub
+
+# When the Action will run
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+# Workflow Jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and push
+        uses: ricado-group/docker-base-image-build-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          docker-image-name: nutek-fedsec
+          docker-hub-username: ${{ secrets.DOCKER_USERNAME }}
+          docker-hub-password: ${{ secrets.DOCKER_PASSWORD }}
