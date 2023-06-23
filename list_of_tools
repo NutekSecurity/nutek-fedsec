@@ -1,9 +1,10 @@
+brew tap owasp-amass/amass &&
+brew install amass
 bettercap
 ettercap
 hashcat
 hydra
-john
-metasploit
+john-jumbo
 mitmproxy
 ncrack
 socat
@@ -22,7 +23,6 @@ jansson
 radare2
 rats
 zzuf
-amass
 arp-scan
 bmon
 dnsx
@@ -49,7 +49,6 @@ termshark
 testssl
 zmap
 argon2
-atuin
 bat
 bottom
 discount
@@ -71,9 +70,11 @@ openvpn
 ouch
 pandoc
 podman
-ripgrep
+podman-compose
+ripgrep-all
 sd
 tmux
 viu
 w3m
 whatmask
+brew install --cask metasploit
